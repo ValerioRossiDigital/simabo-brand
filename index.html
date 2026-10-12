@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simabo Brand Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#65BBB6; --teal-dk:#2E7D78; --ink:#2A2B2D; --red:#FF5151;
+  --ok:#1E9E50; --white:#FFFFFF; --paper:#F6F3EC; --tint:#EEF7F6; --line:#E4E8E7; --muted:#6B7376;
+  --display:"Bricolage Grotesque", Roboto, sans-serif;
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:20px; --r-pill:999px;
+  --sh-sm:0 4px 12px rgba(42,43,45,.18); --sh-md:0 10px 26px rgba(42,43,45,.12); --sh-lg:0 18px 40px rgba(42,43,45,.18);
+  --pad:clamp(20px,5vw,72px);
+  --img:prototypes/descent/img;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0}
+body{background:var(--white);color:var(--ink);font:400 16px/1.55 Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* shell */
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:22px;padding:14px var(--pad);background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.top::-webkit-scrollbar{display:none}
+.top img{height:20px;flex:none}
+.top a{font:500 12px "Roboto Mono",monospace;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--muted);white-space:nowrap}
+.top a:hover{color:var(--teal-dk)}
+.sec{padding:96px var(--pad);border-top:1px solid var(--line)}
+.wrap{max-width:1240px;margin:0 auto}
+.k{display:inline-flex;align-items:center;gap:10px;font:500 12px "Roboto Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-dk)}
+.k::before{content:"";width:28px;height:1.5px;background:currentColor}
+h2.t{font:800 clamp(40px,6vw,76px)/.92 var(--display);letter-spacing:-.035em;margin:12px 0 40px}
+em.u,.t em,.hero-g em{font-style:normal;color:var(--teal-dk);background:linear-gradient(rgba(101,187,182,.35),rgba(101,187,182,.35)) 0 88%/100% .12em no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .04em}
+.cap{font:400 12px/1.5 "Roboto Mono",monospace;color:var(--muted);letter-spacing:.02em;margin-top:10px}
+.g{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.g5{grid-template-columns:repeat(5,minmax(0,1fr))}.g6{grid-template-columns:repeat(6,minmax(0,1fr))}
+@media (max-width:900px){.g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g6{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.tile{border-radius:var(--r-lg);border:1px solid var(--line);padding:22px;background:#fff}
+.yes,.no{position:relative}
+.yes::after,.no::after{content:"";position:absolute;top:12px;right:12px;width:56px;height:56px;border-radius:50%;z-index:3;box-shadow:0 0 0 3px #fff,0 6px 16px rgba(42,43,45,.25);background-position:center;background-repeat:no-repeat;background-size:30px}
+.yes::after{background-color:var(--ok);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4.5 12.5l5 5 10-11' fill='none' stroke='white' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.no::after{background-color:var(--red);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 5l14 14M19 5L5 19' fill='none' stroke='white' stroke-width='3.6' stroke-linecap='round'/%3E%3C/svg%3E")}
+.yes{outline:4px solid var(--ok);outline-offset:3px}.no{outline:4px solid var(--red);outline-offset:3px}
+.cap.ok,.cap.ko{font-weight:500}.cap.ok{color:var(--ok)}.cap.ko{color:var(--red)}
+
+/* cover */
+.cover{min-height:88vh;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:40px;padding:60px var(--pad)}
+.cover .logo{width:min(520px,90%)}
+.hero-g{font:800 clamp(56px,9vw,140px)/.86 var(--display);letter-spacing:-.045em;margin:clamp(56px,9vw,120px) 0 0}
+.cover .stack{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;transform:rotate(-3deg)}
+.cover .stack .pet:nth-child(2){margin-top:40px}
+.strip{display:flex;height:14px;border-radius:99px;overflow:hidden;margin-top:36px;max-width:520px}
+@media (max-width:900px){.cover{grid-template-columns:1fr}}
+
+/* logo */
+.lg{aspect-ratio:16/9;border-radius:var(--r-lg);display:grid;place-items:center;padding:12%;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.lg img{width:100%}
+.lg.photo::before{content:"";position:absolute;inset:0;background:rgba(42,43,45,.35)}
+.lg.photo img{position:relative}
+
+/* downloads */
+.dlc b{display:block;font:800 22px var(--display);margin:14px 0 10px}
+.dll{display:flex;flex-wrap:wrap;gap:8px}
+.dll a{display:inline-flex;gap:6px;align-items:baseline;border:1.5px solid var(--line);border-radius:var(--r-sm);padding:8px 12px;font:700 13px Roboto;text-decoration:none;background:#fff}
+.dll a span{font:500 11px "Roboto Mono",monospace;color:var(--muted)}
+.dll a:hover{border-color:var(--teal-dk);color:var(--teal-dk)}
+
+/* colors */
+.sw{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line)}
+.sw .c{height:150px;padding:14px;display:flex;align-items:flex-end;font:800 22px var(--display)}
+.sw .m{padding:12px 14px;font:400 12px/1.6 "Roboto Mono",monospace;color:var(--muted)}
+.sw .m b{display:block;font:500 13px Roboto;color:var(--ink);margin-bottom:2px}
+.ratio{display:flex;height:64px;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-top:18px}
+.ratio div{display:flex;align-items:flex-end;padding:8px 10px;font:500 11px "Roboto Mono",monospace}
+.pair{border-radius:var(--r-md);padding:18px;display:flex;justify-content:space-between;align-items:flex-end;min-height:130px;font:800 26px var(--display);border:1px solid var(--line)}
+.pair span{font:500 12px "Roboto Mono",monospace}
+
+/* type */
+.spec{display:grid;grid-template-columns:170px 1fr;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+.spec .cap{margin:0}
+@media (max-width:700px){.spec{grid-template-columns:1fr;gap:6px}}
+.aa{border-radius:var(--r-lg);padding:28px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between}
+.aa b{font-size:110px;line-height:.8;letter-spacing:-.04em}
+
+/* shapes */
+.rad{height:150px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);display:grid;place-items:center;padding:14px}
+.rv-v{display:block;font:800 30px/1 var(--display);margin-top:14px}
+.shd{height:120px;background:#fff;border-radius:var(--r-lg);display:grid;place-items:center;font:500 12px "Roboto Mono",monospace;color:var(--muted)}
+h3.sub{font:500 12px "Roboto Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:40px 0 16px}
+
+/* components (same as the prototype) */
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:var(--r-sm);padding:13px 22px;font:700 15px Roboto;text-decoration:none;border:2px solid transparent;transition:transform .15s,background .15s,color .15s;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn--ink{background:var(--ink);color:#fff;box-shadow:0 10px 24px rgba(42,43,45,.18)}
+.btn--teal{background:var(--teal-dk);color:#fff;box-shadow:0 10px 24px rgba(46,125,120,.25)}
+.btn--line{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn--line:hover{background:var(--ink);color:#fff}
+.btn--white{background:#fff;color:var(--ink)}
+.btn--sm{padding:9px 16px;font-size:14px}
+.demo{border-radius:var(--r-lg);padding:28px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:var(--r-pill);background:#fff;color:var(--ink);font:600 11.5px/1.2 Roboto;box-shadow:var(--sh-sm)}
+.heart{color:var(--red);display:inline-block;animation:beat 1.4s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.3)}30%{transform:scale(1)}45%{transform:scale(1.2)}60%{transform:scale(1)}}
+.pet{position:relative;display:block;aspect-ratio:3/4;border-radius:var(--r-lg);overflow:hidden;color:#fff;text-decoration:none;box-shadow:var(--sh-md);isolation:isolate}
+.pet img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.pet::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(42,43,45,0) 50%,rgba(42,43,45,.85) 100%)}
+.pet:hover img{transform:scale(1.06)}
+.pet .name{position:absolute;left:14px;bottom:12px;font:800 22px/1 var(--display)}
+.pet .badges{position:absolute;top:10px;left:10px;right:10px;display:flex;flex-wrap:wrap;gap:6px}
+.pillar{position:relative;min-height:380px;border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;color:#fff;text-decoration:none;box-shadow:0 10px 30px rgba(42,43,45,.14);isolation:isolate}
+.pillar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.pillar::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(42,43,45,0) 35%,rgba(42,43,45,.9) 100%)}
+.pillar:hover img{transform:scale(1.06)}
+.pillar .n{position:absolute;top:18px;left:22px;font:500 12px "Roboto Mono",monospace;letter-spacing:.14em}
+.pillar h3{font:800 30px/1 var(--display);margin:0 0 8px}
+.pillar p{margin:0;font-size:15px;color:rgba(255,255,255,.88)}
+.pillar .go{margin-top:14px;font:700 14px Roboto;color:var(--teal)}
+.way{display:grid;grid-template-columns:200px 1fr auto;gap:22px;align-items:center;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none}
+.way .thumb{width:200px;height:130px;border-radius:var(--r-md);object-fit:cover;box-shadow:0 8px 20px rgba(42,43,45,.12);transition:transform .35s}
+.way h4{font:800 34px/1 var(--display);margin:0 0 6px;transition:color .2s}
+.way p{margin:0;color:var(--muted);font-size:15px}
+.way .arrow{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font-size:18px;transition:all .2s}
+.way:hover .thumb{transform:scale(1.05) rotate(-2deg)}.way:hover h4{color:var(--teal-dk)}.way:hover .arrow{background:var(--ink);color:#fff}
+@media (max-width:700px){.way{grid-template-columns:96px 1fr}.way .thumb{width:96px;height:80px}.way .arrow{display:none}}
+.tab{border:1.5px solid var(--line);background:#fff;color:var(--ink);border-radius:var(--r-pill);padding:9px 16px;font:500 14px Roboto;display:inline-flex;align-items:center;gap:8px}
+.tab span{font:500 12px "Roboto Mono",monospace;color:var(--muted)}
+.tab.on{background:var(--ink);border-color:var(--ink);color:#fff}.tab.on span{color:rgba(255,255,255,.7)}
+.field{width:100%;border-radius:var(--r-sm);border:1.5px solid var(--line);background:#fff;padding:13px 15px;font:400 15px Roboto;color:var(--ink)}
+.field:focus{outline:none;border-color:var(--teal-dk);box-shadow:0 0 0 4px rgba(46,125,120,.12)}
+.field.dark{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2);color:#fff}
+.field.err{border-color:var(--red)}
+.ticks{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.ticks li{display:flex;gap:12px}
+.ticks li::before{content:"";flex:0 0 22px;height:22px;border-radius:50%;background:var(--teal-dk) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.callout{padding:16px 18px;border-left:3px solid var(--teal-dk);background:#fff;border-radius:0 var(--r-md) var(--r-md) 0;font-size:15px}
+.stamp{width:120px;height:120px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;text-align:center;font:500 11px/1.3 "Roboto Mono",monospace;letter-spacing:.06em;text-transform:uppercase;transform:rotate(-10deg);box-shadow:var(--sh-lg)}
+.stamp b{display:block;font:800 30px/1 var(--display);text-transform:none}
+
+/* sections & screens */
+.shot{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);box-shadow:var(--sh-md);background:#fff}
+.phone{border-radius:28px;overflow:hidden;border:8px solid var(--ink);box-shadow:var(--sh-lg);max-width:260px}
+
+/* motion */
+.mq{overflow:hidden;border-radius:var(--r-lg);height:260px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 15%,#000 85%,transparent);mask-image:linear-gradient(180deg,transparent,#000 15%,#000 85%,transparent)}
+.mq .tr{display:flex;flex-direction:column;gap:10px;animation:up 14s linear infinite}
+@keyframes up{to{transform:translateY(calc(-50% - 5px))}}
+.rv{animation:rv 2.6s cubic-bezier(.2,.7,.2,1) infinite}
+@keyframes rv{0%,15%{opacity:0;transform:translateY(30px)}45%,100%{opacity:1;transform:none}}
+.rings{position:relative;height:200px;display:grid;place-items:center}
+.rings i{position:absolute;width:16px;height:16px;border-radius:50%;border:1.5px solid var(--teal-dk);animation:ring 2.4s linear infinite}
+.rings i:nth-child(2){animation-delay:.8s}.rings i:nth-child(3){animation-delay:1.6s}
+.rings b{width:12px;height:12px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 3px #fff}
+@keyframes ring{from{transform:scale(1);opacity:.9}to{transform:scale(9);opacity:0}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+.foot{padding:40px var(--pad);background:var(--ink);color:rgba(255,255,255,.6);font:400 12px/1.7 "Roboto Mono",monospace}
+.foot img{height:22px;margin-bottom:14px}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <img src="logo/svg/simabo-logo-ink.svg" alt="Simabo">
+  <a href="#logo">Logo</a><a href="#color">Color</a><a href="#type">Type</a><a href="#shape">Shape</a><a href="#ui">Components</a><a href="#photo">Photo</a><a href="#motion">Motion</a><a href="#layout">Layout</a><a href="#download">Download</a><a href="#todo">Open</a>
+</nav>
+
+<!-- COVER -->
+<header class="cover">
+  <div>
+    <img class="logo" src="logo/svg/simabo-logo-ink.svg" alt="Simabo">
+    <h1 class="hero-g">Brand guide <em>v1.0</em></h1>
+    <div class="strip"><div style="flex:6;background:#fff;border:1px solid var(--line);border-radius:99px 0 0 99px"></div><div style="flex:2;background:var(--ink)"></div><div style="flex:1;background:var(--teal-dk)"></div><div style="flex:.7;background:var(--tint)"></div><div style="flex:.7;background:var(--paper)"></div><div style="flex:.3;background:var(--teal)"></div></div>
+    <p class="cap">October 2026</p>
+  </div>
+  <div class="stack">
+    <a class="pet" href="#"><img src="img/animals/pombinha.jpg" alt=""><span class="badges"><span class="badge"><span class="heart">❤</span>Looking for love</span></span><span class="name">Pombinha</span></a>
+    <a class="pet" href="#"><img src="img/animals/gatinho.jpg" alt=""><span class="name">Gatinho</span></a>
+    <a class="pet" href="#"><img src="img/animals/kian.jpg" alt=""><span class="name">Kian</span></a>
+  </div>
+</header>
+
+<!-- LOGO -->
+<section class="sec" id="logo"><div class="wrap">
+  <span class="k">01 Logo</span>
+  <h2 class="t">One mark, <em>three inks.</em></h2>
+  <div class="g g3">
+    <div><div class="lg yes" style="background:#fff;border:1px solid var(--line)"><img src="logo/svg/simabo-logo-ink.svg" alt=""></div><p class="cap">Ink on white · default</p></div>
+    <div><div class="lg yes" style="background:var(--ink)"><img src="logo/svg/simabo-logo-white.svg" alt=""></div><p class="cap">White on ink · footer</p></div>
+    <div><div class="lg photo yes" style="background-image:url(img/site/hostel.jpg)"><img src="logo/svg/simabo-logo-white.svg" alt=""></div><p class="cap">White on photo + 35% ink veil</p></div>
+    <div><div class="lg yes" style="background:var(--teal-dk)"><img src="logo/svg/simabo-logo-white.svg" alt=""></div><p class="cap">White on teal dark</p></div>
+    <div><div class="lg no" style="background:var(--teal)"><img src="logo/svg/simabo-logo-ink.svg" alt="" style="opacity:.9"></div><p class="cap ko">No: ink on light teal (low contrast)</p></div>
+    <div><div class="lg no" style="background-image:url(img/site/shelters.jpg)"><img src="logo/svg/simabo-logo-white.svg" alt=""></div><p class="cap ko">No: on busy photo without veil</p></div>
+  </div>
+  <div class="g g4" style="margin-top:28px;align-items:end">
+    <div class="tile"><img src="logo/svg/simabo-logo-ink.svg" alt="" style="height:24px;width:auto"><p class="cap">Header · 24px high</p></div>
+    <div class="tile"><img src="logo/svg/simabo-logo-ink.svg" alt="" style="height:20px;width:auto"><p class="cap">Mobile · 20px · minimum</p></div>
+    <div class="tile" style="display:flex;justify-content:center"><img src="img/icon.png" alt="" style="height:48px;width:auto;filter:brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(400%) hue-rotate(169deg)"></div>
+    <div class="tile" style="background:var(--tint);display:grid;place-items:center"><a class="btn btn--teal btn--sm" href="#download">Download the logo ↓</a></div>
+  </div>
+  <div class="dl" id="download">
+    <h3 class="sub" style="margin-top:56px">Download</h3>
+    <div class="g g3">
+      <div class="dlc"><div class="lg" style="aspect-ratio:3/1;background:#fff;border:1px solid var(--line);"><img src="logo/svg/simabo-logo-ink.svg" alt="Simabo logo Ink"></div><b>Ink</b><div class="dll"><a href="logo/svg/simabo-logo-ink.svg" download>SVG <span>vector</span></a><a href="logo/png/simabo-logo-ink-400px.png" download>PNG <span>400px</span></a><a href="logo/png/simabo-logo-ink-800px.png" download>PNG <span>800px</span></a><a href="logo/png/simabo-logo-ink-1600px.png" download>PNG <span>1600px</span></a><a href="logo/png/simabo-logo-ink-3200px.png" download>PNG <span>3200px</span></a></div></div>
+      <div class="dlc"><div class="lg" style="aspect-ratio:3/1;background:var(--ink);"><img src="logo/svg/simabo-logo-white.svg" alt="Simabo logo White"></div><b>White</b><div class="dll"><a href="logo/svg/simabo-logo-white.svg" download>SVG <span>vector</span></a><a href="logo/png/simabo-logo-white-400px.png" download>PNG <span>400px</span></a><a href="logo/png/simabo-logo-white-800px.png" download>PNG <span>800px</span></a><a href="logo/png/simabo-logo-white-1600px.png" download>PNG <span>1600px</span></a><a href="logo/png/simabo-logo-white-3200px.png" download>PNG <span>3200px</span></a></div></div>
+      <div class="dlc"><div class="lg" style="aspect-ratio:3/1;background:#fff;border:1px solid var(--line);"><img src="logo/svg/simabo-logo-teal.svg" alt="Simabo logo Teal dark"></div><b>Teal dark</b><div class="dll"><a href="logo/svg/simabo-logo-teal.svg" download>SVG <span>vector</span></a><a href="logo/png/simabo-logo-teal-400px.png" download>PNG <span>400px</span></a><a href="logo/png/simabo-logo-teal-800px.png" download>PNG <span>800px</span></a><a href="logo/png/simabo-logo-teal-1600px.png" download>PNG <span>1600px</span></a><a href="logo/png/simabo-logo-teal-3200px.png" download>PNG <span>3200px</span></a></div></div>
+    </div>
+    <p class="cap">PNG with transparent background · width in pixels, height 1:6.3 · <a href="logo/simabo-logos.zip" download><b>Download all (.zip)</b></a></p>
+  </div>
+</div></section>
+
+<!-- COLOR -->
+<section class="sec" id="color" style="background:var(--white)"><div class="wrap">
+  <span class="k">02 Color</span>
+  <h2 class="t">White first. <em>Ink & teal</em> to act.</h2>
+  <div class="g g3">
+    <div class="sw"><div class="c" style="background:var(--ink);color:#fff">Ink</div><div class="m"><b>Text · primary buttons · footer</b>#2A2B2D · Elementor “Text”</div></div>
+    <div class="sw"><div class="c" style="background:var(--teal-dk);color:#fff">Teal dark</div><div class="m"><b>Actions · links · highlights</b>#2E7D78 · Elementor “Secondary”</div></div>
+    <div class="sw"><div class="c" style="background:var(--teal);color:var(--ink)">Teal</div><div class="m"><b>Underline · map · details · text only on ink</b>#65BBB6 · Elementor “Primary”</div></div>
+    <div class="sw"><div class="c" style="background:var(--white);color:var(--ink);border-bottom:1px solid var(--line)">White</div><div class="m"><b>Base of every page</b>#FFFFFF</div></div>
+    <div class="sw"><div class="c" style="background:var(--paper);color:var(--ink)">Paper</div><div class="m"><b>Warm section background</b>#F6F3EC · Elementor “Paper”</div></div>
+    <div class="sw"><div class="c" style="background:var(--tint);color:var(--ink)">Tint</div><div class="m"><b>Cool section background</b>#EEF7F6 · Elementor “Tint”</div></div>
+    <div class="sw"><div class="c" style="background:var(--muted);color:#fff">Muted</div><div class="m"><b>Secondary text</b>#6B7376 · Elementor “Muted”</div></div>
+    <div class="sw"><div class="c" style="background:var(--red);color:#fff">Red <span class="heart" style="color:#fff;margin-left:8px">❤</span></div><div class="m"><b>Only the heart</b>#FF5151 · Elementor “Accent”</div></div>
+  </div>
+  <div class="ratio"><div style="flex:6;background:#fff">white 60</div><div style="flex:2;background:var(--ink);color:#fff">ink 20</div><div style="flex:1;background:var(--teal-dk);color:#fff">teal 10</div><div style="flex:.7;background:var(--paper)">paper</div><div style="flex:.7;background:var(--tint)">tint</div><div style="flex:.3;background:var(--teal)"></div></div>
+  <p class="cap">Proportions on a page (indicative)</p>
+  <div class="g g4" style="margin-top:28px">
+    <div class="pair yes" style="background:#fff;color:var(--ink)">Aa<span>14.2:1</span></div>
+    <div class="pair yes" style="background:var(--teal-dk);color:#fff">Aa<span>4.9:1</span></div>
+    <div class="pair yes" style="background:var(--ink);color:var(--teal)">Aa<span>6.3:1</span></div>
+    <div class="pair no" style="background:#fff;color:var(--teal)">Aa<span>2.3:1</span></div>
+  </div>
+  <p class="cap">WCAG contrast, calculated with the WCAG 2.1 formula · minimum 4.5:1 for text (w3.org/TR/WCAG21/#contrast-minimum). Teal dark on tint is 4.46:1: only for titles, not small text.</p>
+</div></section>
+
+<!-- TYPE -->
+<section class="sec" id="type"><div class="wrap">
+  <span class="k">03 Type</span>
+  <h2 class="t">Big, bold, <em>human.</em></h2>
+  <div class="g g3" style="margin-bottom:28px">
+    <div class="aa" style="background:var(--ink);color:#fff"><b style="font-family:var(--display);font-weight:800">Aa</b><span class="cap" style="color:rgba(255,255,255,.7)">Bricolage Grotesque 800 · titles</span></div>
+    <div class="aa" style="background:var(--tint)"><b style="font-weight:300">Aa</b><span class="cap">Roboto 300 / 400 / 700 · text, buttons</span></div>
+    <div class="aa" style="background:var(--paper)"><b style="font-family:'Roboto Mono';font-weight:500;font-size:84px">Aa</b><span class="cap">Roboto Mono 500 · labels, numbers</span></div>
+  </div>
+  <div class="spec"><span class="cap">H1 · 118 / 52 mobile</span><div style="font:800 clamp(52px,7.6vw,118px)/.9 var(--display);letter-spacing:-.04em">They're waiting for <em class="u">you.</em></div></div>
+  <div class="spec"><span class="cap">H2 · 88 / 40</span><div style="font:800 clamp(40px,6vw,88px)/.92 var(--display);letter-spacing:-.035em">How you can <em class="u">help.</em></div></div>
+  <div class="spec"><span class="cap">H3 · 30–36</span><div style="font:800 34px/1 var(--display);letter-spacing:-.025em">Volunteer</div></div>
+  <div class="spec"><span class="cap">Card · 22</span><div style="font:800 22px/1 var(--display)">Pombinha</div></div>
+  <div class="spec"><span class="cap">Lede · 300 · 19–21</span><div style="font:300 20px/1.5 Roboto;color:var(--muted);max-width:560px">The dogs and cats of our shelters on São Vicente are looking for a family.</div></div>
+  <div class="spec"><span class="cap">Body · 400 · 16–17</span><div style="max-width:560px">Simabo Cape Verde is led by an engaged team, whose members work to ensure the care and protection of the local animal population.</div></div>
+  <div class="spec"><span class="cap">Label · Mono 12</span><div><span class="k">Mindelo · Cabo Verde</span></div></div>
+  <div class="spec"><span class="cap">Number · 34</span><div style="display:flex;gap:28px"><div><b style="display:block;font:800 34px/1 var(--display)">37</b><span style="font-size:13px;color:var(--muted)">dogs looking for a home</span></div><div><b style="display:block;font:800 34px/1 var(--display)">22</b><span style="font-size:13px;color:var(--muted)">cats looking for a home</span></div></div></div>
+  <div class="g g2" style="margin-top:36px">
+    <div class="tile yes"><div style="font:800 46px/.95 var(--display);letter-spacing:-.03em">Find your <em class="u">new friend.</em></div><p class="cap">Highlight 1–2 words, at the end</p></div>
+    <div class="tile no"><div style="font:600 40px/1 Roboto;text-transform:uppercase;letter-spacing:.02em">FIND YOUR NEW FRIEND</div><p class="cap ko">No all-caps titles · no Roboto for titles</p></div>
+  </div>
+</div></section>
+
+<!-- SHAPE -->
+<section class="sec" id="shape" style="background:var(--paper)"><div class="wrap">
+  <span class="k">04 Shape & space</span>
+  <h2 class="t">Soft corners, <em>soft shadows.</em></h2>
+  <h3 class="sub" style="margin-top:0">Corner radius</h3>
+  <div class="g g6">
+    <div><div class="rad"><a class="btn btn--teal btn--sm" href="#">Donate</a></div><span class="rv-v">8px</span><p class="cap" style="margin-top:6px">Buttons · form fields</p></div>
+    <div><div class="rad"><img src="img/site/volunteer.jpg" alt="" style="width:120px;height:80px;object-fit:cover;border-radius:12px"></div><span class="rv-v">12px</span><p class="cap" style="margin-top:6px">Thumbnails · donation options</p></div>
+    <div><div class="rad"><span class="pet" style="width:84px;box-shadow:none"><img src="img/animals/kian.jpg" alt=""></span></div><span class="rv-v">16px</span><p class="cap" style="margin-top:6px">Cards · photos · tiles</p></div>
+    <div><div class="rad"><span style="display:block;width:130px;height:90px;background:#fff;border-radius:20px;box-shadow:0 18px 40px rgba(42,43,45,.12);border:1px solid var(--line)"></span></div><span class="rv-v">20px</span><p class="cap" style="margin-top:6px">Form cards · video · big blocks</p></div>
+    <div><div class="rad"><span class="badge"><span class="heart">❤</span>Looking for love</span></div><span class="rv-v">999px</span><p class="cap" style="margin-top:6px">Pill: badges · filter tabs</p></div>
+    <div><div class="rad"><span class="way" style="padding:0;border:0;display:block"><span class="arrow">→</span></span></div><span class="rv-v">50%</span><p class="cap" style="margin-top:6px">Circle: arrow buttons · stamp</p></div>
+  </div>
+  <h3 class="sub">Borders</h3>
+  <div class="g g4">
+    <div><div class="shd" style="border:1px solid var(--line)">1px · Line</div><p class="cap">Cards, tiles, dividers<br>1px solid #E4E8E7</p></div>
+    <div><div class="shd" style="border:1.5px solid var(--line);border-radius:8px">1.5px · Line</div><p class="cap">Fields, tabs, options<br>1.5px solid #E4E8E7</p></div>
+    <div><div class="shd" style="border:1.5px solid var(--teal-dk);border-radius:8px;box-shadow:0 0 0 4px rgba(46,125,120,.12)">focus</div><p class="cap">Focus / selected<br>1.5px solid #2E7D78 + ring 0 0 0 4px rgba(46,125,120,.12)</p></div>
+    <div><div class="shd" style="border:2px solid var(--ink);border-radius:8px">2px · Ink</div><p class="cap">Line button<br>2px solid #2A2B2D · error fields: border #FF5151</p></div>
+  </div>
+  <h3 class="sub">Shadows</h3>
+  <div class="g g3">
+    <div><div class="shd" style="box-shadow:var(--sh-sm)">sm</div><p class="cap">Badges, small tabs<br>0 4px 12px rgba(42,43,45,.18)</p></div>
+    <div><div class="shd" style="box-shadow:var(--sh-md)">md</div><p class="cap">Cards, screenshots<br>0 10px 26px rgba(42,43,45,.12)</p></div>
+    <div><div class="shd" style="box-shadow:var(--sh-lg)">lg</div><p class="cap">Video, stamp, phone<br>0 18px 40px rgba(42,43,45,.18)</p></div>
+    <div><div class="shd" style="box-shadow:0 18px 40px rgba(42,43,45,.08)">form</div><p class="cap">Form cards (donate, contact)<br>0 18px 40px rgba(42,43,45,.08)</p></div>
+    <div><div class="shd" style="background:var(--ink);color:#fff;box-shadow:0 10px 24px rgba(42,43,45,.18)">ink button</div><p class="cap">Ink button<br>0 10px 24px rgba(42,43,45,.18)</p></div>
+    <div><div class="shd" style="background:var(--teal-dk);color:#fff;box-shadow:0 10px 24px rgba(46,125,120,.25)">teal button</div><p class="cap">Teal button<br>0 10px 24px rgba(46,125,120,.25)</p></div>
+  </div>
+</div></section>
+
+<!-- COMPONENTS -->
+<section class="sec" id="ui"><div class="wrap">
+  <span class="k">05 Components</span>
+  <h2 class="t">The <em>kit.</em></h2>
+
+  <div class="g g2">
+    <div class="demo" style="background:#fff;border:1px solid var(--line)"><a class="btn btn--ink" href="#">Meet our animals</a><a class="btn btn--line" href="#">Donate</a><a class="btn btn--teal btn--sm" href="#">Donate</a></div>
+    <div class="demo" style="background:var(--ink)"><a class="btn btn--teal" href="#">Join our tribe</a><a class="btn btn--white" href="#">Book a room</a></div>
+  </div>
+  <p class="cap">Ink = main action · Line = second action · Teal = Donate / forms · max 2 buttons together · icons: Font Awesome (the set built into Elementor)</p>
+
+  <div class="demo" style="background:var(--tint);margin-top:18px">
+    <span class="badge"><span class="heart">❤</span>Looking for love</span>
+    <span class="badge"><svg viewBox="0 0 18 12" width="16" height="11"><rect width="18" height="12" rx="1.5" fill="#003399"/><g fill="#FFCC00"><circle cx="9" cy="1.8" r=".9"/><circle cx="11.1" cy="2.36" r=".9"/><circle cx="12.64" cy="3.9" r=".9"/><circle cx="13.2" cy="6" r=".9"/><circle cx="12.64" cy="8.1" r=".9"/><circle cx="11.1" cy="9.64" r=".9"/><circle cx="9" cy="10.2" r=".9"/><circle cx="6.9" cy="9.64" r=".9"/><circle cx="5.36" cy="8.1" r=".9"/><circle cx="4.8" cy="6" r=".9"/><circle cx="5.36" cy="3.9" r=".9"/><circle cx="6.9" cy="2.36" r=".9"/></g></svg>Ready for EU</span>
+    <span class="tab on">All <span>59</span></span><span class="tab">Dogs <span>37</span></span><span class="tab">Cats <span>22</span></span>
+    <span class="k" style="margin-left:auto">Eyebrow label</span>
+  </div>
+
+  <div class="g g4" style="margin-top:28px">
+    <a class="pet" href="#"><img src="img/animals/pombinha.jpg" alt=""><span class="badges"><span class="badge"><span class="heart">❤</span>Looking for love</span></span><span class="name">Pombinha</span></a>
+    <a class="pet" href="#"><img src="img/animals/alecrim.jpg" alt=""><span class="badges"><span class="badge"><span class="heart">❤</span>Looking for love</span></span><span class="name">Alecrim</span></a>
+    <a class="pillar" href="#"><img src="img/site/shelters.jpg" alt=""><span class="n">01</span><h3>Shelters</h3><p>A lovely family for every animal.</p><span class="go">Discover →</span></a>
+    <a class="pillar" href="#"><img src="img/site/clinic.jpg" alt=""><span class="n">03</span><h3>Clinic</h3><p>Open for anybody looking for help.</p><span class="go">Discover →</span></a>
+  </div>
+  <p class="cap">Animal card 3:4 · Photo card with number · gradient from the bottom, text always readable</p>
+
+  <a class="way" href="#" style="margin-top:28px"><img class="thumb" src="img/site/volunteer.jpg" alt=""><div><h4>Volunteer</h4><p>Do you prefer to take action? Come here and help us with our animals.</p></div><span class="arrow">→</span></a>
+  <p class="cap">Action row · photo always visible</p>
+
+  <div class="g g3" style="margin-top:28px;align-items:center">
+    <div class="tile" style="display:grid;gap:10px"><input class="field" placeholder="First name *"><input class="field" style="border-color:var(--teal-dk);box-shadow:0 0 0 4px rgba(46,125,120,.12)" value="Focus"><input class="field err" value="Error"><p class="cap" style="margin:0">Fields · rest / focus / error</p></div>
+    <div class="tile" style="background:var(--tint);border:0"><ul class="ticks"><li>9 rooms in Mindelo</li><li>300m from the beach</li></ul><div class="callout" style="margin-top:16px">The hostel finances Simabo.</div><p class="cap">Ticks · callout</p></div>
+    <div class="tile" style="display:grid;place-items:center;background:var(--tint);border:0"><div class="stamp"><div><b>9</b>rooms<br>in Mindelo</div></div><p class="cap">Stamp · one per page</p></div>
+  </div>
+</div></section>
+
+<!-- PHOTO -->
+<section class="sec" id="photo" style="background:var(--tint)"><div class="wrap">
+  <span class="k">06 Photo</span>
+  <h2 class="t">Real animals, <em>real eyes.</em></h2>
+  <div class="g g4">
+    <div class="pet yes"><img src="img/animals/kian.jpg" alt=""></div>
+    <div class="pet yes"><img src="img/animals/gatinho.jpg" alt=""></div>
+    <div class="pet yes"><img src="img/site/adopt.jpg" alt=""></div>
+    <div class="pet yes"><img src="img/site/volunteer.jpg" alt=""></div>
+  </div>
+  <p class="cap">Close to the animal · eye level · people with animals · Cabo Verde light</p>
+  <div class="g g2" style="margin-top:28px">
+    <div class="pillar yes" style="min-height:260px"><img src="img/site/education.jpg" alt=""><h3>Education</h3></div>
+    <div class="no" style="position:relative;min-height:260px;border-radius:16px;overflow:hidden;display:flex;align-items:center;justify-content:center"><img src="img/site/education.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><h3 style="position:relative;font:800 30px var(--display);color:#fff;margin:0">Education</h3></div>
+  </div>
+  <p class="cap">Text on photo: always on the bottom gradient · never centered on the raw photo</p>
+</div></section>
+
+<!-- MOTION -->
+<section class="sec" id="motion"><div class="wrap">
+  <span class="k">07 Motion</span>
+  <h2 class="t">Alive, <em>never loud.</em></h2>
+  <div class="g g4">
+    <div><div class="mq"><div class="tr"><div class="pet" style="aspect-ratio:4/3"><img src="img/animals/kuba.jpg" alt=""></div><div class="pet" style="aspect-ratio:4/3"><img src="img/animals/mimi.jpg" alt=""></div><div class="pet" style="aspect-ratio:4/3"><img src="img/animals/prata.jpg" alt=""></div><div class="pet" style="aspect-ratio:4/3"><img src="img/animals/kuba.jpg" alt=""></div><div class="pet" style="aspect-ratio:4/3"><img src="img/animals/mimi.jpg" alt=""></div><div class="pet" style="aspect-ratio:4/3"><img src="img/animals/prata.jpg" alt=""></div></div></div><p class="cap">Slow loop · pause on hover</p></div>
+    <div class="tile" style="height:260px;display:grid;place-items:center"><div class="rv" style="font:800 40px/1 var(--display)">Reveal</div><p class="cap" style="position:absolute;margin-top:150px">Fade + 30px up · 0.8s</p></div>
+    <div class="tile" style="height:260px;display:grid;place-items:center"><span class="heart" style="font-size:72px">❤</span><p class="cap" style="position:absolute;margin-top:150px">Heartbeat · only for love</p></div>
+    <div class="tile" style="height:260px"><div class="rings"><i></i><i></i><i></i><b></b></div><p class="cap" style="text-align:center">Rings · places on the map</p></div>
+  </div>
+  <p class="cap">Hover: photos zoom 1.06 · buttons lift 2px · everything stops with “reduce motion”</p>
+</div></section>
+
+<!-- LAYOUT -->
+<section class="sec" id="layout" style="background:var(--paper)"><div class="wrap">
+  <span class="k">08 Layout</span>
+  <h2 class="t">The home, <em>section by section.</em></h2>
+  <div class="g g2">
+    <div><div class="shot"><img src="img/layout/hero.jpg" alt=""></div><p class="cap">Hero · animals first</p></div>
+    <div><div class="shot"><img src="img/layout/map.jpg" alt=""></div><p class="cap">Where we are · globe → Cabo Verde</p></div>
+    <div><div class="shot"><img src="img/layout/what.jpg" alt=""></div><p class="cap">What we do · paper</p></div>
+    <div><div class="shot"><img src="img/layout/animals.jpg" alt=""></div><p class="cap">Animals · filters + row</p></div>
+    <div><div class="shot"><img src="img/layout/help.jpg" alt=""></div><p class="cap">How you can help · rows</p></div>
+    <div><div class="shot"><img src="img/layout/hostel.jpg" alt=""></div><p class="cap">Hostel · tint + video</p></div>
+    <div><div class="shot"><img src="img/layout/who.jpg" alt=""></div><p class="cap">Who we are · partners loop</p></div>
+    <div><div class="shot"><img src="img/layout/foot.jpg" alt=""></div><p class="cap">Footer · ink + newsletter</p></div>
+  </div>
+  <div style="display:flex;gap:22px;flex-wrap:wrap;margin-top:40px;align-items:flex-start">
+    <div class="phone"><img src="img/layout/m-hero.jpg" alt=""></div>
+    <div class="phone"><img src="img/layout/m-what.jpg" alt=""></div>
+    <div class="phone"><img src="img/layout/m-help.jpg" alt=""></div>
+    <div class="phone"><img src="img/layout/m-hostel.jpg" alt=""></div>
+  </div>
+  <p class="cap">Mobile · swipe rows instead of grids · full-width buttons · 20px side margin</p>
+</div></section>
+
+<!-- OPEN -->
+<section class="sec" id="todo"><div class="wrap">
+  <span class="k">09 Open</span>
+  <h2 class="t">Still to <em>decide.</em></h2>
+  <div class="g g3">
+    <div class="tile">Tone of voice (EN / IT / PT)</div>
+  </div>
+</div></section>
+
+<footer class="foot">
+  <img src="logo/svg/simabo-logo-white.svg" alt="Simabo">
+  <div>Simabo brand guide v1.0 · October 2026</div>
+</footer>
+</body>
+</html>
