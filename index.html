@@ -25,11 +25,12 @@ img{max-width:100%;display:block}
 a{color:inherit}
 
 /* shell */
-.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:22px;padding:14px var(--pad);background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:22px;padding:14px var(--pad);background:linear-gradient(115deg,var(--teal) 0 30%,var(--teal-dk) 30%);overflow-x:auto;scrollbar-width:none}
+@media (max-width:767px){.top{background:linear-gradient(115deg,var(--teal) 0 36%,var(--teal-dk) 36%)}}
 .top::-webkit-scrollbar{display:none}
 .top img{height:20px;flex:none}
-.top a{font:500 12px "Roboto Mono",monospace;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--muted);white-space:nowrap}
-.top a:hover{color:var(--teal-dk)}
+.top a{font:500 12px "Roboto Mono",monospace;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,.85);white-space:nowrap}
+.top a:hover{color:#fff}
 .sec{padding:96px var(--pad);border-top:1px solid var(--line)}
 .wrap{max-width:1240px;margin:0 auto}
 .k{display:inline-flex;align-items:center;gap:10px;font:500 12px "Roboto Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-dk)}
@@ -51,7 +52,7 @@ em.u,.t em,.hero-g em{font-style:normal;color:var(--teal-dk);background:linear-g
 
 /* cover */
 .cover{min-height:88vh;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:40px;padding:60px var(--pad)}
-.cover .logo{width:min(520px,90%)}
+.cover .logo{width:min(520px,90%);background:var(--teal);border-radius:var(--r-lg);padding:clamp(18px,3vw,32px)}
 .hero-g{font:800 clamp(56px,9vw,140px)/.86 var(--display);letter-spacing:-.045em;margin:clamp(56px,9vw,120px) 0 0}
 .cover .stack{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;transform:rotate(-3deg)}
 .cover .stack .pet:nth-child(2){margin-top:40px}
@@ -63,6 +64,18 @@ em.u,.t em,.hero-g em{font-style:normal;color:var(--teal-dk);background:linear-g
 .lg img{width:100%}
 .lg.photo::before{content:"";position:absolute;inset:0;background:rgba(42,43,45,.35)}
 .lg.photo img{position:relative}
+
+/* header demo */
+.hdr-demo{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 44px;min-height:60px;border-radius:var(--r-md);background:linear-gradient(115deg,var(--teal) 0 30%,var(--teal-dk) 30%);overflow:hidden}
+.hdr-demo img{width:152px}
+.hdr-demo nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.hdr-demo nav a{color:#fff;font:500 15px/1 Roboto;padding:10px 13px;position:relative;white-space:nowrap}
+.hdr-demo nav a.on::after{content:"";position:absolute;left:13px;right:13px;bottom:2px;height:2px;background:#fff}
+.hdr-demo nav a.donate{background:#fff;color:var(--teal-dk);border-radius:8px;margin-left:12px;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.hdr-demo.m{max-width:390px;margin-top:14px;padding:8px 16px;min-height:52px;background:linear-gradient(115deg,var(--teal) 0 62%,var(--teal-dk) 62%)}
+.hdr-demo.m img{width:126px}
+.hdr-demo .burger{width:24px;height:18px;background:linear-gradient(#fff 0 0) 0 0/100% 3px no-repeat,linear-gradient(#fff 0 0) 0 50%/100% 3px no-repeat,linear-gradient(#fff 0 0) 0 100%/100% 3px no-repeat}
+@media (max-width:900px){.hdr-demo:not(.m) nav{display:none}}
 
 /* downloads */
 .dlc b{display:block;font:800 22px var(--display);margin:14px 0 10px}
@@ -165,15 +178,15 @@ h3.sub{font:500 12px "Roboto Mono",monospace;letter-spacing:.18em;text-transform
 <body>
 
 <nav class="top">
-  <img src="logo/svg/simabo-logo-ink.svg" alt="Simabo">
+  <img src="logo/svg/simabo-logo-white-shadow.svg" alt="Simabo">
   <a href="#logo">Logo</a><a href="#color">Color</a><a href="#type">Type</a><a href="#shape">Shape</a><a href="#ui">Components</a><a href="#photo">Photo</a><a href="#motion">Motion</a><a href="#layout">Layout</a><a href="#download">Download</a><a href="#todo">Open</a>
 </nav>
 
 <!-- COVER -->
 <header class="cover">
   <div>
-    <img class="logo" src="logo/svg/simabo-logo-ink.svg" alt="Simabo">
-    <h1 class="hero-g">Brand guide <em>v1.0</em></h1>
+    <img class="logo" src="logo/svg/simabo-logo-white-shadow.svg" alt="Simabo">
+    <h1 class="hero-g">Brand guide <em>v1.1</em></h1>
     <div class="strip"><div style="flex:6;background:#fff;border:1px solid var(--line);border-radius:99px 0 0 99px"></div><div style="flex:2;background:var(--ink)"></div><div style="flex:1;background:var(--teal-dk)"></div><div style="flex:.7;background:var(--tint)"></div><div style="flex:.7;background:var(--paper)"></div><div style="flex:.3;background:var(--teal)"></div></div>
     <p class="cap">October 2026</p>
   </div>
@@ -187,29 +200,37 @@ h3.sub{font:500 12px "Roboto Mono",monospace;letter-spacing:.18em;text-transform
 <!-- LOGO -->
 <section class="sec" id="logo"><div class="wrap">
   <span class="k">01 Logo</span>
-  <h2 class="t">One mark, <em>three inks.</em></h2>
-  <div class="g g3">
-    <div><div class="lg yes" style="background:#fff;border:1px solid var(--line)"><img src="logo/svg/simabo-logo-ink.svg" alt=""></div><p class="cap">Ink on white · default</p></div>
+  <h2 class="t">One mark, <em>always white.</em></h2>
+  <p style="max-width:720px;margin:-16px 0 32px">The logo is always <b>white on a coloured background</b>: light teal, teal dark, ink or a photo with a veil. It never sits on white or on a light background, and there is no black/ink logo: never use it. On light teal use the version <b>with shadow</b>, on darker backgrounds the plain white one.</p>
+  <div class="g g4">
+    <div><div class="lg yes" style="background:var(--teal)"><img src="logo/svg/simabo-logo-white-shadow.svg" alt=""></div><p class="cap">White + shadow on light teal · header</p></div>
+    <div><div class="lg yes" style="background:var(--teal-dk)"><img src="logo/svg/simabo-logo-white.svg" alt=""></div><p class="cap">White on teal dark</p></div>
     <div><div class="lg yes" style="background:var(--ink)"><img src="logo/svg/simabo-logo-white.svg" alt=""></div><p class="cap">White on ink · footer</p></div>
     <div><div class="lg photo yes" style="background-image:url(img/site/hostel.jpg)"><img src="logo/svg/simabo-logo-white.svg" alt=""></div><p class="cap">White on photo + 35% ink veil</p></div>
-    <div><div class="lg yes" style="background:var(--teal-dk)"><img src="logo/svg/simabo-logo-white.svg" alt=""></div><p class="cap">White on teal dark</p></div>
-    <div><div class="lg no" style="background:var(--teal)"><img src="logo/svg/simabo-logo-ink.svg" alt="" style="opacity:.9"></div><p class="cap ko">No: ink on light teal (low contrast)</p></div>
+    <div><div class="lg no" style="background:#fff;border:1px solid var(--line)"><img src="logo/svg/simabo-logo-white.svg" alt="" style="filter:brightness(0) invert(14%)"></div><p class="cap ko">No: black / ink logo · never</p></div>
+    <div><div class="lg no" style="background:var(--paper)"><img src="logo/svg/simabo-logo-teal.svg" alt=""></div><p class="cap ko">No: on white or light backgrounds</p></div>
+    <div><div class="lg no" style="background:var(--teal)"><img src="logo/svg/simabo-logo-white.svg" alt=""></div><p class="cap ko">No: white without shadow on light teal</p></div>
     <div><div class="lg no" style="background-image:url(img/site/shelters.jpg)"><img src="logo/svg/simabo-logo-white.svg" alt=""></div><p class="cap ko">No: on busy photo without veil</p></div>
   </div>
   <div class="g g4" style="margin-top:28px;align-items:end">
-    <div class="tile"><img src="logo/svg/simabo-logo-ink.svg" alt="" style="height:24px;width:auto"><p class="cap">Header · 24px high</p></div>
-    <div class="tile"><img src="logo/svg/simabo-logo-ink.svg" alt="" style="height:20px;width:auto"><p class="cap">Mobile · 20px · minimum</p></div>
-    <div class="tile" style="display:flex;justify-content:center"><img src="img/icon.png" alt="" style="height:48px;width:auto;filter:brightness(0) saturate(100%) invert(14%) sepia(5%) saturate(400%) hue-rotate(169deg)"></div>
+    <div class="tile" style="background:var(--teal);border-color:var(--teal)"><img src="logo/svg/simabo-logo-white-shadow.svg" alt="" style="width:152px"><p class="cap" style="color:var(--ink)">Header · 152px wide</p></div>
+    <div class="tile" style="background:var(--teal);border-color:var(--teal)"><img src="logo/svg/simabo-logo-white-shadow.svg" alt="" style="width:126px"><p class="cap" style="color:var(--ink)">Mobile · 126px wide · minimum</p></div>
+    <div class="tile" style="display:flex;justify-content:center;background:var(--teal-dk);border-color:var(--teal-dk)"><img src="img/icon.png" alt="" style="height:48px;width:auto;filter:brightness(0) invert(1)"></div>
     <div class="tile" style="background:var(--tint);display:grid;place-items:center"><a class="btn btn--teal btn--sm" href="#download">Download the logo ↓</a></div>
   </div>
+
+  <h3 class="sub" style="margin-top:56px">Header</h3>
+  <div class="hdr-demo"><img src="logo/svg/simabo-logo-white-shadow.svg" alt="Simabo"><nav><a>Who we are</a><a>What we do</a><a>How you can help</a><a class="on">Contact us</a><a class="donate">Donate</a></nav></div>
+  <div class="hdr-demo m"><img src="logo/svg/simabo-logo-white-shadow.svg" alt="Simabo"><span class="burger"></span></div>
+  <p class="cap">Two tones with a diagonal cut: light teal behind the logo, teal dark behind the menu (CSS linear-gradient 115deg, both colours at the same stop: 30% desktop · 50% tablet · 62% mobile) · logo white + shadow · menu Roboto 500 15px white (4.9:1 on teal dark) · active page: 2px white underline · Donate: white button, teal dark text, ink on hover · burger white · mobile dropdown: white panel, ink text</p>
   <div class="dl" id="download">
     <h3 class="sub" style="margin-top:56px">Download</h3>
     <div class="g g3">
-      <div class="dlc"><div class="lg" style="aspect-ratio:3/1;background:#fff;border:1px solid var(--line);"><img src="logo/svg/simabo-logo-ink.svg" alt="Simabo logo Ink"></div><b>Ink</b><div class="dll"><a href="logo/svg/simabo-logo-ink.svg" download>SVG <span>vector</span></a><a href="logo/png/simabo-logo-ink-400px.png" download>PNG <span>400px</span></a><a href="logo/png/simabo-logo-ink-800px.png" download>PNG <span>800px</span></a><a href="logo/png/simabo-logo-ink-1600px.png" download>PNG <span>1600px</span></a><a href="logo/png/simabo-logo-ink-3200px.png" download>PNG <span>3200px</span></a></div></div>
+      <div class="dlc"><div class="lg" style="aspect-ratio:3/1;background:var(--teal);"><img src="logo/svg/simabo-logo-white-shadow.svg" alt="Simabo logo White with shadow"></div><b>White + shadow</b><div class="dll"><a href="logo/svg/simabo-logo-white-shadow.svg" download>SVG <span>vector</span></a><a href="logo/png/simabo-logo-white-shadow-400px.png" download>PNG <span>400px</span></a><a href="logo/png/simabo-logo-white-shadow-800px.png" download>PNG <span>800px</span></a><a href="logo/png/simabo-logo-white-shadow-1600px.png" download>PNG <span>1600px</span></a><a href="logo/png/simabo-logo-white-shadow-3200px.png" download>PNG <span>3200px</span></a></div></div>
       <div class="dlc"><div class="lg" style="aspect-ratio:3/1;background:var(--ink);"><img src="logo/svg/simabo-logo-white.svg" alt="Simabo logo White"></div><b>White</b><div class="dll"><a href="logo/svg/simabo-logo-white.svg" download>SVG <span>vector</span></a><a href="logo/png/simabo-logo-white-400px.png" download>PNG <span>400px</span></a><a href="logo/png/simabo-logo-white-800px.png" download>PNG <span>800px</span></a><a href="logo/png/simabo-logo-white-1600px.png" download>PNG <span>1600px</span></a><a href="logo/png/simabo-logo-white-3200px.png" download>PNG <span>3200px</span></a></div></div>
       <div class="dlc"><div class="lg" style="aspect-ratio:3/1;background:#fff;border:1px solid var(--line);"><img src="logo/svg/simabo-logo-teal.svg" alt="Simabo logo Teal dark"></div><b>Teal dark</b><div class="dll"><a href="logo/svg/simabo-logo-teal.svg" download>SVG <span>vector</span></a><a href="logo/png/simabo-logo-teal-400px.png" download>PNG <span>400px</span></a><a href="logo/png/simabo-logo-teal-800px.png" download>PNG <span>800px</span></a><a href="logo/png/simabo-logo-teal-1600px.png" download>PNG <span>1600px</span></a><a href="logo/png/simabo-logo-teal-3200px.png" download>PNG <span>3200px</span></a></div></div>
     </div>
-    <p class="cap">PNG with transparent background · width in pixels, height 1:6.3 · <a href="logo/simabo-logos.zip" download><b>Download all (.zip)</b></a></p>
+    <p class="cap">PNG with transparent background · width in pixels, height 1:6.3 (with shadow 1:5.8) · <a href="logo/simabo-logos.zip" download><b>Download all (.zip)</b></a></p>
   </div>
 </div></section>
 
@@ -220,7 +241,7 @@ h3.sub{font:500 12px "Roboto Mono",monospace;letter-spacing:.18em;text-transform
   <div class="g g3">
     <div class="sw"><div class="c" style="background:var(--ink);color:#fff">Ink</div><div class="m"><b>Text · primary buttons · footer</b>#2A2B2D · Elementor “Text”</div></div>
     <div class="sw"><div class="c" style="background:var(--teal-dk);color:#fff">Teal dark</div><div class="m"><b>Actions · links · highlights</b>#2E7D78 · Elementor “Secondary”</div></div>
-    <div class="sw"><div class="c" style="background:var(--teal);color:var(--ink)">Teal</div><div class="m"><b>Underline · map · details · text only on ink</b>#65BBB6 · Elementor “Primary”</div></div>
+    <div class="sw"><div class="c" style="background:var(--teal);color:var(--ink)">Teal</div><div class="m"><b>Underline · map · details · header (logo side) · text only on ink</b>#65BBB6 · Elementor “Primary”</div></div>
     <div class="sw"><div class="c" style="background:var(--white);color:var(--ink);border-bottom:1px solid var(--line)">White</div><div class="m"><b>Base of every page</b>#FFFFFF</div></div>
     <div class="sw"><div class="c" style="background:var(--paper);color:var(--ink)">Paper</div><div class="m"><b>Warm section background</b>#F6F3EC · Elementor “Paper”</div></div>
     <div class="sw"><div class="c" style="background:var(--tint);color:var(--ink)">Tint</div><div class="m"><b>Cool section background</b>#EEF7F6 · Elementor “Tint”</div></div>
@@ -388,12 +409,13 @@ h3.sub{font:500 12px "Roboto Mono",monospace;letter-spacing:.18em;text-transform
   <h2 class="t">Still to <em>decide.</em></h2>
   <div class="g g3">
     <div class="tile">Tone of voice (EN / IT / PT)</div>
+    <div class="tile">Teal dark logo: the logo no longer goes on white or light backgrounds, keep it in the downloads?</div>
   </div>
 </div></section>
 
 <footer class="foot">
   <img src="logo/svg/simabo-logo-white.svg" alt="Simabo">
-  <div>Simabo brand guide v1.0 · October 2026</div>
+  <div>Simabo brand guide v1.1 · October 2026</div>
 </footer>
 </body>
 </html>
