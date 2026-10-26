@@ -9,8 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --teal:#65BBB6; --teal-dk:#2E7D78; --ink:#2A2B2D; --red:#FF5151;
-  --ok:#1E9E50; --white:#FFFFFF; --paper:#F6F3EC; --tint:#EEF7F6; --line:#E4E8E7; --muted:#6B7376;
+  --teal:#65BBB6; --teal-dk:#2D7A75; --ink:#2A2B2D; --red:#FF5151;
+  --ok:#1E9E50; --white:#FFFFFF; --paper:#F6F3EC; --tint:#EEF7F6; --line:#E4E8E7; --muted:#687073;
   --display:"Bricolage Grotesque", Roboto, sans-serif;
   --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:20px; --r-pill:999px;
   --sh-sm:0 4px 12px rgba(42,43,45,.18); --sh-md:0 10px 26px rgba(42,43,45,.12); --sh-lg:0 18px 40px rgba(42,43,45,.18);
@@ -111,7 +111,7 @@ h3.sub{font:500 12px "Roboto Mono",monospace;letter-spacing:.18em;text-transform
 .btn{display:inline-flex;align-items:center;gap:10px;border-radius:var(--r-sm);padding:13px 22px;font:700 15px Roboto;text-decoration:none;border:2px solid transparent;transition:transform .15s,background .15s,color .15s;cursor:pointer}
 .btn:hover{transform:translateY(-2px)}
 .btn--ink{background:var(--ink);color:#fff;box-shadow:0 10px 24px rgba(42,43,45,.18)}
-.btn--teal{background:var(--teal-dk);color:#fff;box-shadow:0 10px 24px rgba(46,125,120,.25)}
+.btn--teal{background:var(--teal-dk);color:#fff;box-shadow:0 10px 24px rgba(45,122,117,.25)}
 .btn--line{background:transparent;color:var(--ink);border-color:var(--ink)}
 .btn--line:hover{background:var(--ink);color:#fff}
 .btn--white{background:#fff;color:var(--ink)}
@@ -145,7 +145,7 @@ h3.sub{font:500 12px "Roboto Mono",monospace;letter-spacing:.18em;text-transform
 .tab span{font:500 12px "Roboto Mono",monospace;color:var(--muted)}
 .tab.on{background:var(--ink);border-color:var(--ink);color:#fff}.tab.on span{color:rgba(255,255,255,.7)}
 .field{width:100%;border-radius:var(--r-sm);border:1.5px solid var(--line);background:#fff;padding:13px 15px;font:400 15px Roboto;color:var(--ink)}
-.field:focus{outline:none;border-color:var(--teal-dk);box-shadow:0 0 0 4px rgba(46,125,120,.12)}
+.field:focus{outline:none;border-color:var(--teal-dk);box-shadow:0 0 0 4px rgba(45,122,117,.12)}
 .field.dark{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2);color:#fff}
 .field.err{border-color:var(--red)}
 .ticks{list-style:none;padding:0;margin:0;display:grid;gap:10px}
@@ -186,7 +186,7 @@ h3.sub{font:500 12px "Roboto Mono",monospace;letter-spacing:.18em;text-transform
 <header class="cover">
   <div>
     <img class="logo" src="logo/svg/simabo-logo-white-shadow.svg" alt="Simabo">
-    <h1 class="hero-g">Brand guide <em>v1.1</em></h1>
+    <h1 class="hero-g">Brand guide <em>v1.2</em></h1>
     <div class="strip"><div style="flex:6;background:#fff;border:1px solid var(--line);border-radius:99px 0 0 99px"></div><div style="flex:2;background:var(--ink)"></div><div style="flex:1;background:var(--teal-dk)"></div><div style="flex:.7;background:var(--tint)"></div><div style="flex:.7;background:var(--paper)"></div><div style="flex:.3;background:var(--teal)"></div></div>
     <p class="cap">October 2026</p>
   </div>
@@ -240,12 +240,12 @@ h3.sub{font:500 12px "Roboto Mono",monospace;letter-spacing:.18em;text-transform
   <h2 class="t">White first. <em>Ink & teal</em> to act.</h2>
   <div class="g g3">
     <div class="sw"><div class="c" style="background:var(--ink);color:#fff">Ink</div><div class="m"><b>Text · primary buttons · footer</b>#2A2B2D · Elementor “Text”</div></div>
-    <div class="sw"><div class="c" style="background:var(--teal-dk);color:#fff">Teal dark</div><div class="m"><b>Actions · links · highlights</b>#2E7D78 · Elementor “Secondary”</div></div>
+    <div class="sw"><div class="c" style="background:var(--teal-dk);color:#fff">Teal dark</div><div class="m"><b>Actions · links · highlights</b>#2D7A75 · Elementor “Secondary” · min. 4.5:1 on Paper and Tint</div></div>
     <div class="sw"><div class="c" style="background:var(--teal);color:var(--ink)">Teal</div><div class="m"><b>Underline · map · details · header (logo side) · text only on ink</b>#65BBB6 · Elementor “Primary”</div></div>
     <div class="sw"><div class="c" style="background:var(--white);color:var(--ink);border-bottom:1px solid var(--line)">White</div><div class="m"><b>Base of every page</b>#FFFFFF</div></div>
     <div class="sw"><div class="c" style="background:var(--paper);color:var(--ink)">Paper</div><div class="m"><b>Warm section background</b>#F6F3EC · Elementor “Paper”</div></div>
     <div class="sw"><div class="c" style="background:var(--tint);color:var(--ink)">Tint</div><div class="m"><b>Cool section background</b>#EEF7F6 · Elementor “Tint”</div></div>
-    <div class="sw"><div class="c" style="background:var(--muted);color:#fff">Muted</div><div class="m"><b>Secondary text</b>#6B7376 · Elementor “Muted”</div></div>
+    <div class="sw"><div class="c" style="background:var(--muted);color:#fff">Muted</div><div class="m"><b>Secondary text</b>#687073 · Elementor “Muted” · min. 4.5:1 on Paper and Tint</div></div>
     <div class="sw"><div class="c" style="background:var(--red);color:#fff">Red <span class="heart" style="color:#fff;margin-left:8px">❤</span></div><div class="m"><b>Only the heart</b>#FF5151 · Elementor “Accent”</div></div>
   </div>
   <div class="ratio"><div style="flex:6;background:#fff">white 60</div><div style="flex:2;background:var(--ink);color:#fff">ink 20</div><div style="flex:1;background:var(--teal-dk);color:#fff">teal 10</div><div style="flex:.7;background:var(--paper)">paper</div><div style="flex:.7;background:var(--tint)">tint</div><div style="flex:.3;background:var(--teal)"></div></div>
@@ -299,7 +299,7 @@ h3.sub{font:500 12px "Roboto Mono",monospace;letter-spacing:.18em;text-transform
   <div class="g g4">
     <div><div class="shd" style="border:1px solid var(--line)">1px · Line</div><p class="cap">Cards, tiles, dividers<br>1px solid #E4E8E7</p></div>
     <div><div class="shd" style="border:1.5px solid var(--line);border-radius:8px">1.5px · Line</div><p class="cap">Fields, tabs, options<br>1.5px solid #E4E8E7</p></div>
-    <div><div class="shd" style="border:1.5px solid var(--teal-dk);border-radius:8px;box-shadow:0 0 0 4px rgba(46,125,120,.12)">focus</div><p class="cap">Focus / selected<br>1.5px solid #2E7D78 + ring 0 0 0 4px rgba(46,125,120,.12)</p></div>
+    <div><div class="shd" style="border:1.5px solid var(--teal-dk);border-radius:8px;box-shadow:0 0 0 4px rgba(45,122,117,.12)">focus</div><p class="cap">Focus / selected<br>1.5px solid #2D7A75 + ring 0 0 0 4px rgba(45,122,117,.12)</p></div>
     <div><div class="shd" style="border:2px solid var(--ink);border-radius:8px">2px · Ink</div><p class="cap">Line button<br>2px solid #2A2B2D · error fields: border #FF5151</p></div>
   </div>
   <h3 class="sub">Shadows</h3>
@@ -309,7 +309,7 @@ h3.sub{font:500 12px "Roboto Mono",monospace;letter-spacing:.18em;text-transform
     <div><div class="shd" style="box-shadow:var(--sh-lg)">lg</div><p class="cap">Video, stamp, phone<br>0 18px 40px rgba(42,43,45,.18)</p></div>
     <div><div class="shd" style="box-shadow:0 18px 40px rgba(42,43,45,.08)">form</div><p class="cap">Form cards (donate, contact)<br>0 18px 40px rgba(42,43,45,.08)</p></div>
     <div><div class="shd" style="background:var(--ink);color:#fff;box-shadow:0 10px 24px rgba(42,43,45,.18)">ink button</div><p class="cap">Ink button<br>0 10px 24px rgba(42,43,45,.18)</p></div>
-    <div><div class="shd" style="background:var(--teal-dk);color:#fff;box-shadow:0 10px 24px rgba(46,125,120,.25)">teal button</div><p class="cap">Teal button<br>0 10px 24px rgba(46,125,120,.25)</p></div>
+    <div><div class="shd" style="background:var(--teal-dk);color:#fff;box-shadow:0 10px 24px rgba(45,122,117,.25)">teal button</div><p class="cap">Teal button<br>0 10px 24px rgba(45,122,117,.25)</p></div>
   </div>
 </div></section>
 
@@ -343,7 +343,7 @@ h3.sub{font:500 12px "Roboto Mono",monospace;letter-spacing:.18em;text-transform
   <p class="cap">Action row · photo always visible</p>
 
   <div class="g g3" style="margin-top:28px;align-items:center">
-    <div class="tile" style="display:grid;gap:10px"><input class="field" placeholder="First name *"><input class="field" style="border-color:var(--teal-dk);box-shadow:0 0 0 4px rgba(46,125,120,.12)" value="Focus"><input class="field err" value="Error"><p class="cap" style="margin:0">Fields · rest / focus / error</p></div>
+    <div class="tile" style="display:grid;gap:10px"><input class="field" placeholder="First name *"><input class="field" style="border-color:var(--teal-dk);box-shadow:0 0 0 4px rgba(45,122,117,.12)" value="Focus"><input class="field err" value="Error"><p class="cap" style="margin:0">Fields · rest / focus / error</p></div>
     <div class="tile" style="background:var(--tint);border:0"><ul class="ticks"><li>9 rooms in Mindelo</li><li>300m from the beach</li></ul><div class="callout" style="margin-top:16px">The hostel finances Simabo.</div><p class="cap">Ticks · callout</p></div>
     <div class="tile" style="display:grid;place-items:center;background:var(--tint);border:0"><div class="stamp"><div><b>9</b>rooms<br>in Mindelo</div></div><p class="cap">Stamp · one per page</p></div>
   </div>
@@ -415,7 +415,7 @@ h3.sub{font:500 12px "Roboto Mono",monospace;letter-spacing:.18em;text-transform
 
 <footer class="foot">
   <img src="logo/svg/simabo-logo-white.svg" alt="Simabo">
-  <div>Simabo brand guide v1.1 · October 2026</div>
+  <div>Simabo brand guide v1.2 · October 2026</div>
 </footer>
 </body>
 </html>
